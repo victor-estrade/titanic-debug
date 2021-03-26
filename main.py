@@ -1,3 +1,4 @@
+# coding: utf-8
 
 from cli import parse_args
 
