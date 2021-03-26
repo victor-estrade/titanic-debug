@@ -1,5 +1,5 @@
 
-
+from cli import parse_args
 
 
 HELLO_MSG = \
@@ -11,6 +11,8 @@ Debug in progress ...
 
 def main():
     print(HELLO_MSG)
+    args = parse_args()
+
 
 
 if __name__ == '__main__':
