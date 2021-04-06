@@ -13,7 +13,7 @@ SBATCH_TEMPLATE = \
 #SBATCH --mem={memory}
 #SBATCH --partition={partition}
 #SBATCH --gres=gpu:{gpu}
-#SBATCH --node-list={node_list}
+#SBATCH --nodelist={node_list}
 
 hostname
 
