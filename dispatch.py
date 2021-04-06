@@ -70,7 +70,7 @@ def fill_template(node_name, logdir):
     gpu = 1
     node_list = node_list
     docker_image = 'estradevictorantoine/systml:1.4'
-    benchmark = "run.torch_net.py"
+    benchmark = "run.torch_net"
     main_args = ""
 
     container_name = str(uuid4())[:8]
