@@ -14,6 +14,8 @@ from subprocess import call
 Role = lancer les scripts de test sur les divers noeuds.
 """
 
+BALTIC_NODES = ["batlic-1"]
+
 TITANIC_NODES = [
             "titanic-1",
             "titanic-2",
@@ -29,9 +31,10 @@ REPUBLIC_NODES = [
             "republic-4",
             "republic-5",
             "republic-6",
+            "republic-7",
             ]
 
-NODE_LIST = TITANIC_NODES + REPUBLIC_NODES
+NODE_LIST = TITANIC_NODES + REPUBLIC_NODES + BALTIC_NODES
 
 
 def launch_on_all_nodes():
