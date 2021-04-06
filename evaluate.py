@@ -28,7 +28,7 @@ def newest_out_file(node_name):
     job_name = f"DEAD-{node_name[0]}{node_name[-1]}"
     workdir = os.getcwd()
     node_directory = os.path.join(workdir, 'log', job_name)
-    all_files = glob.glob('*.stdout', reccursive=True)
+    all_files = glob.glob('*.stdout', recursive=True)
     print(all_files)
 
 
