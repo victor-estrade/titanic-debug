@@ -48,5 +48,5 @@ def latest_out_file(node_name):
 
 def get_end_msg(fname):
     with open(fname, "r") as f:
-        end_msg = f.readlines()[-1]
+        end_msg = f.readlines()[-1][:-1]
     return end_msg
