@@ -24,10 +24,6 @@ def is_dead(node_name):
     fname = latest_out_file(node_name)
     if fname:
         end_msg = get_end_msg(fname)
-        print("end_msg ====")
-        print(end_msg)
-        print(end_msg, '=', END_MSG)
-        print(END_MSG)
         return end_msg != END_MSG
     else:
         return None
