@@ -37,5 +37,5 @@ WORKDIR={workdir}
 sdocker -i  -v $WORKDIR:$WORKDIR \
             --name "{container_name}" \
             {docker_image} \
-            bash -c "cd ${{WORKDIR}}; python -m {benchmark} {main_args}
+            bash -c "cd ${{WORKDIR}}; python -m {benchmark} {main_args}"
 """
