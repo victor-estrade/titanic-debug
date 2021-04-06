@@ -15,8 +15,10 @@ Debug in progress ...
 def main():
     print(HELLO_MSG)
     args = parse_args()
-    # launch_on_all_nodes()
-    evaluate_all()
+    if args.action == "run"
+        launch_on_all_nodes()
+    elif args.action == "eval":
+        evaluate_all()
 
 
 

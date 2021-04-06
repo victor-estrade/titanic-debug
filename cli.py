@@ -10,5 +10,7 @@ import argparse
 def parse_args():
     parser = argparse.ArgumentParser(description="Debug script to detect dead nodes")
 
+    parser.add_argument('action', help='action to do', choices=("run", "eval"))
+
     args = parser.parse_args()
     return args
