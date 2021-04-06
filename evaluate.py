@@ -5,7 +5,7 @@ import datetime
 import glob
 
 from dispatch import NODE_LIST
-from run.torch_net import END_MSG
+from run.common import END_MSG
 
 
 

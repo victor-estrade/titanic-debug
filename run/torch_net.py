@@ -15,6 +15,8 @@ import torch.optim as optim
 import numpy as np
 
 
+from .common import END_MSG
+
 class L2(nn.Module):
     def __init__(self, n_in=1, n_out=1, n_unit=80):
         super().__init__()
@@ -82,9 +84,6 @@ HELLO_MSG = \
 Hello !
 Running run.torch_net
 """
-
-END_MSG = "OK"
-
 
 def main():
     print(HELLO_MSG)
