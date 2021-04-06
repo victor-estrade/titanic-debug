@@ -14,7 +14,6 @@ Debug in progress ...
 def main():
     print(HELLO_MSG)
     args = parse_args()
-
     launch_on_all_nodes()
 
 

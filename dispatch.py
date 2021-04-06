@@ -35,7 +35,8 @@ NODE_LIST = TITANIC_NODES + REPUBLIC_NODES
 
 
 def launch_on_all_nodes():
-    launch_on_node("titanic-1")
+    for node_name in NODE_LIST:
+        launch_on_node(node_name)
 
 
 def launch_on_node(node_name):
