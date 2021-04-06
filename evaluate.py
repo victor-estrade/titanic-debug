@@ -35,8 +35,6 @@ def latest_out_file(node_name):
     workdir = os.getcwd()
     node_directory = os.path.join(workdir, 'log', job_name)
     all_files = glob.glob(os.path.join(node_directory, '**/*.stdout'), recursive=True)
-    print("all_files !!")
-    print(all_files)
     if all_files:
         latest_file = max(all_files, key=os.path.getctime)
     else:

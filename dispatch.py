@@ -45,7 +45,6 @@ def launch_on_all_nodes():
 def launch_on_node(node_name):
     logdir = generate_unique_logdir(node_name)
     script = fill_template(node_name, logdir)
-    print(script)
     script_path = os.path.join(logdir, 'script.slurm')
     write_script(script, logdir, script_path)
     run_one_script(script_path)
