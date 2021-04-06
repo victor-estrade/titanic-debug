@@ -11,7 +11,10 @@ from run.common import END_MSG
 
 def evaluate_all():
     for node_name in NODE_LIST:
-        if is_dead(node_name):
+        dead_status = is_dead(node_name)
+        if dead_status is None:
+            print(f"[NONE] {node_name}")
+        elif dead_status:
             print(f"[DEAD] {node_name}")
         else:
             print(f"[ALIVE] {node_name}")
@@ -19,8 +22,11 @@ def evaluate_all():
 
 def is_dead(node_name):
     fname = latest_out_file(node_name)
-    end_msg = get_end_msg(fname)
-    return end_msg != END_MSG
+    if fname:
+        end_msg = get_end_msg(fname)
+        return end_msg != END_MSG
+    else:
+        return None
 
 
 
@@ -31,7 +37,10 @@ def latest_out_file(node_name):
     all_files = glob.glob(os.path.join(node_directory, '**/*.stdout'), recursive=True)
     print("all_files !!")
     print(all_files)
-    latest_file = max(all_files, key=os.path.getctime)
+    if all_files:
+        latest_file = max(all_files, key=os.path.getctime)
+    else:
+        latest_file = None
     return latest_file
 
 
