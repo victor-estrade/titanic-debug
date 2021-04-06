@@ -31,12 +31,11 @@ trap dockerkill TERM
 trap dockerkill INT
 trap dockerkill CONT
 
-#WORKDIR="/home/tao/vestrade/workspace/SystML/SystGradDescent"
 WORKDIR={workdir}
 
 
 sdocker -i  -v $WORKDIR:$WORKDIR \
             --name "{container_name}" \
             {docker_image} \
-            bash -c "cd ${{WORKDIR}}; python -m {benchmark} {main_args}"
+            bash -c "cd ${{WORKDIR}}; python -m {benchmark} {main_args}
 """

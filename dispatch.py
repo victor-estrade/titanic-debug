@@ -1,8 +1,13 @@
 # coding: utf-8
 
 import os
+import datetime
+
+from template import SBATCH_TEMPLATE
 
 from uuid import uuid4
+
+from subprocess import call
 
 
 """
@@ -16,7 +21,7 @@ TITANIC_NODES = [
             "titanic-4",
             "titanic-5",
             ]
-REPUBLIC_NODES
+
 REPUBLIC_NODES = [
             "republic-1",
             "republic-2",
@@ -29,19 +34,40 @@ REPUBLIC_NODES = [
 NODE_LIST = TITANIC_NODES + REPUBLIC_NODES
 
 
-def fill_template(node_list):
+def launch_on_all_nodes():
+    launch_on_node("titanic-1")
+
+
+def launch_on_node(node_name):
+    logdir = generate_unique_logdir(node_name)
+    script = fill_template(node_name, logdir)
+    print(script)
+    script_path = os.path.join(logdir, 'script.slurm')
+    write_script(script, logdir, script_path)
+    run_one_script(script_path)
+
+def generate_unique_logdir(node_name):
     now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    job_name = "DEAD"
-    root_logdir = args.logdir
-    logdir = os.path.join(root_logdir, job_name, now)
-    max_time = args.max_time
-    cpu = args.cpu
-    memory = args.mem
-    partition = args.partition
-    gpu = args.gpu
+    job_name = f"DEAD-{node_name[0]}{node_name[-1]}"
+    workdir = os.getcwd()
+    logdir = os.path.join(workdir, 'log', job_name, now)
+    return logdir
+
+
+def fill_template(node_name, logdir):
+    now = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    node_list = node_name
+    job_name = f"DEAD-{node_name[0]}{node_name[-1]}"
+    workdir = os.getcwd()
+    max_time = "1-00:00:00"
+    cpu = 6
+    memory = '64g'
+    partition = 'besteffort'
+    gpu = 1
     node_list = node_list
-    docker_image = args.docker_image
-    benchmark = args.benchmark
+    docker_image = 'estradevictorantoine/systml:1.4'
+    benchmark = "run.torch_net.py"
+    main_args = ""
 
     container_name = str(uuid4())[:8]
 
@@ -60,7 +86,7 @@ def write_script(script, logdir, script_path):
         print(script, file=file)
 
 
-def run(script_path):
+def run_one_script(script_path):
     # Start job
     cmd = ['sbatch', script_path]
     print(" ".join(cmd))
