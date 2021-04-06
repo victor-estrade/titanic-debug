@@ -9,9 +9,17 @@ from run.torch_net import END_MSG
 
 
 
+def evaluate_all():
+    for node_name in NODE_LIST:
+        if is_dead(node_name):
+            print(f"[DEAD] {node_name}")
+        else:
+            print(f"[ALIVE] {node_name}")
+
 
 def is_dead(node_name):
-    end_msg = None # TODO
+    fname = newest_out_file(node_name)
+    end_msg = get_end_msg(fname)
     return end_msg == END_MSG
 
 
@@ -22,3 +30,7 @@ def newest_out_file(node_name):
     node_directory = os.path.join(workdir, 'log', job_name)
     all_files = glob.glob('*.stdout', reccursive=true)
     print(all_files)
+
+
+def get_end_msg(fname):
+    return 'TODO'
