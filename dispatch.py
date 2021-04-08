@@ -14,7 +14,7 @@ from subprocess import call
 Role = lancer les scripts de test sur les divers noeuds.
 """
 
-BALTIC_NODES = ["batlic-1"]
+BALTIC_NODES = ["baltic-1"]
 
 TITANIC_NODES = [
             "titanic-1",
