@@ -22,7 +22,7 @@ TODO : add a command to clean old logs.
 
 # Docker image and other configuration
 
-The docker image and other configuration are hard coded in the fill_template() funciton in dispatch.py
+The docker image and other configuration are hard coded in the fill_template() function in dispatch.py
 
 TODO : make a separated config file (json ?) and functions to read it correctly
 TODO : turn all these configuration elements into command line options (in cli.py)
