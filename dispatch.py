@@ -23,6 +23,9 @@ TITANIC_NODES = [
             "titanic-4",
             "titanic-5",
             ]
+PACIFICIC_NODES = [
+            "pacific-1",
+            ]
 
 REPUBLIC_NODES = [
             "republic-1",
@@ -34,7 +37,7 @@ REPUBLIC_NODES = [
             "republic-7",
             ]
 
-NODE_LIST = TITANIC_NODES + REPUBLIC_NODES + BALTIC_NODES
+NODE_LIST = TITANIC_NODES + REPUBLIC_NODES + BALTIC_NODES + PACIFICIC_NODES
 
 
 def launch_on_all_nodes():
