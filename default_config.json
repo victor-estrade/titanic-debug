@@ -1,0 +1,9 @@
+{
+  "cpu" : 6,
+  "memory" : "64g",
+  "partition" : "besteffort",
+  "gpu" : 1,
+  "docker_image" : "estradevictorantoine/systml:1.5",
+  "benchmark" : "run.torch_net",
+  "main_args" : ""
+}
