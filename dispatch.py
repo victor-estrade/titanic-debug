@@ -27,7 +27,7 @@ TITANIC_NODES = [
 REPUBLIC_NODES = [
             "republic-1",
             "republic-2",
-            "republic-3",
+            # "republic-3",
             "republic-4",
             "republic-5",
             "republic-6",
