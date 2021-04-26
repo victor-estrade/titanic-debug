@@ -18,6 +18,7 @@ python main.py eval
 
 Run logs are saved in `log/DEAD-{node_id}` directory where `{node_id}` are simply the first and last letter of a node name.
 
+TODO : add a command to clean old logs.
 
 # Docker image and other configuration
 
