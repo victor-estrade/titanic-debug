@@ -68,7 +68,7 @@ def fill_template(node_name, logdir):
     partition = 'besteffort'
     gpu = 1
     node_list = node_list
-    docker_image = 'estradevictorantoine/systml:1.4'
+    docker_image = 'estradevictorantoine/systml:1.5'
     benchmark = "run.torch_net"
     main_args = ""
 
